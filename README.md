@@ -1,6 +1,6 @@
 ## Nirmal Surange
 
 
-Hey guys!!
+Hey!!
 
-I'm a PhD scholar at IIIT-Hyderabad India.
+I'm a Ph.D. scholar at IIIT-Hyderabad, India.
