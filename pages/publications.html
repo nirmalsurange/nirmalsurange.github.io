@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .year-section {
+            margin-bottom: 30px;
+        }
+        .publication {
+            margin-bottom: 15px;
+        }
+        .abstract {
+            display: none;
+            margin-top: 5px;
+            font-style: italic;
+            color: #555;
+        }
+        .links {
+            margin-top: 5px;
+        }
+        .links a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Publications</h1>
+    <div id="publications-container"></div>
+
+    <script>
+        async function loadPublications() {
+            const response = await fetch('../data/publications.tsv');
+            const data = await response.text();
+            const rows = data.trim().split('\n').slice(1); // Skip header row
+
+            const publications = rows.map(row => {
+                const [Year, Title, Venue, Authors, Abstract, GitHubLink, PaperLink] = row.split('\t');
+                return { Year, Title, Venue, Authors, Abstract, GitHubLink, PaperLink };
+            });
+
+            const groupedByYear = publications.reduce((acc, pub) => {
+                acc[pub.Year] = acc[pub.Year] || [];
+                acc[pub.Year].push(pub);
+                return acc;
+            }, {});
+
+            const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
+
+            const container = document.getElementById('publications-container');
+            sortedYears.forEach(year => {
+                const yearSection = document.createElement('div');
+                yearSection.className = 'year-section';
+                yearSection.innerHTML = `<h2>${year}</h2>`;
+
+                groupedByYear[year].forEach(pub => {
+                    const pubDiv = document.createElement('div');
+                    pubDiv.className = 'publication';
+                    pubDiv.innerHTML = `
+                        <strong>${pub.Title}</strong> <br>
+                        <em>${pub.Venue}</em> <br>
+                        <span>${pub.Authors}</span> <br>
+                        <a href="#" class="abstract-toggle">Abstract</a>
+                        <div class="abstract">${pub.Abstract}</div>
+                        <div class="links">
+                            <a href="${pub.GitHubLink}" target="_blank">GitHub</a>
+                            <a href="${pub.PaperLink}" target="_blank">Paper</a>
+                        </div>
+                    `;
+                    yearSection.appendChild(pubDiv);
+                });
+
+                container.appendChild(yearSection);
+            });
+
+            document.querySelectorAll('.abstract-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const abstract = this.nextElementSibling;
+                    abstract.style.display = abstract.style.display === 'none' || abstract.style.display === '' ? 'block' : 'none';
+                });
+            });
+        }
+
+        loadPublications();
+    </script>
+</body>
+</html>

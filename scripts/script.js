@@ -23,52 +23,52 @@ const samplePublications = [
     {
         title: "Teclass: A human-annotated relevance-based headline classification and generation dataset for telugu",
         authors: "G. Kanumolu, L. Madasu, N. Surange, and M. Shrivastava",
-        venue: "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation, LREC/COLING 2024",
+        venue: "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation, LREC/COLING",
         year: 2024,
         url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
     },
     {
         title: "Mukhyansh: A headline generation dataset for indic languages",
         authors: "L. Madasu, G. Kanumolu, N. Surange, and M. Shrivastava",
-        venue: "Proceedings of the 37th Pacific Asia Conference on Language, Information and Computation, PACLIC 2023",
+        venue: "Proceedings of the 37th Pacific Asia Conference on Language, Information and Computation, PACLIC",
         year: 2023,
         url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
     },
     {
         title: "Semrel2024: A collection of semantic textual relatedness datasets for 13 languages",
         authors: "N. Ousidhoum, S. H. Muhammad, M. Abdalla, et al. (including N. Surange)",
-        venue: "Findings of the Association for Computational Linguistics, ACL 2024",
+        venue: "Findings of the Association for Computational Linguistics, ACL",
         year: 2024,
         url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
     },
     {
         title: "Semeval task 1: Semantic textual relatedness for african and asian languages",
         authors: "N. Ousidhoum, S. H. Muhammad, M. Abdalla, et al. (including N. Surange)",
-        venue: "Proceedings of the 18th International Workshop on Semantic Evaluation, SemEval@NAACL 2024",
+        venue: "Proceedings of the 18th International Workshop on Semantic Evaluation, SemEval@NAACL",
         year: 2024,
         url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
     },
-    {
-        title: "Indian language summarization using pretrained sequence-to-sequence models",
-        authors: "A. Urlana, S. M. Bhatt, N. Surange, and M. Shrivastava",
-        venue: "Working Notes of FIRE 2022 - Forum for Information Retrieval Evaluation",
-        year: 2022,
-        url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
-    },
-    {
-        title: "Tesum: Human-generated abstractive summarization corpus for telugu",
-        authors: "A. Urlana, N. Surange, P. Baswani, P. Ravva, and M. Shrivastava",
-        venue: "Proceedings of the Thirteenth Language Resources and Evaluation Conference, LREC 2022",
-        year: 2022,
-        url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
-    },
-    {
-        title: "LTRC @mup 2022: Multi-perspective scientific document summarization using pre-trained generation models",
-        authors: "A. Urlana, N. Surange, and M. Shrivastava",
-        venue: "Proceedings of the Third Workshop on Scholarly Document Processing, SDP@COLING 2022",
-        year: 2022,
-        url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
-    }
+    // {
+    //     title: "Indian language summarization using pretrained sequence-to-sequence models",
+    //     authors: "A. Urlana, S. M. Bhatt, N. Surange, and M. Shrivastava",
+    //     venue: "Working Notes of FIRE 2022 - Forum for Information Retrieval Evaluation",
+    //     year: 2022,
+    //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+    // },
+    // {
+    //     title: "Tesum: Human-generated abstractive summarization corpus for telugu",
+    //     authors: "A. Urlana, N. Surange, P. Baswani, P. Ravva, and M. Shrivastava",
+    //     venue: "Proceedings of the Thirteenth Language Resources and Evaluation Conference, LREC 2022",
+    //     year: 2022,
+    //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+    // },
+    // {
+    //     title: "LTRC @mup 2022: Multi-perspective scientific document summarization using pre-trained generation models",
+    //     authors: "A. Urlana, N. Surange, and M. Shrivastava",
+    //     venue: "Proceedings of the Third Workshop on Scholarly Document Processing, SDP@COLING 2022",
+    //     year: 2022,
+    //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+    // }
 ];
 
 // Display publications
@@ -79,6 +79,9 @@ function displayPublications(publications) {
     
     // Clear loading message
     publicationsList.innerHTML = '';
+    
+    // Sort publications by year (recent first)
+    publications.sort((a, b) => b.year - a.year);
     
     // Add publications to the DOM
     publications.forEach(pub => {
