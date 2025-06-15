@@ -4,37 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications</title>
+    <link rel="stylesheet" href="../styles/styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .year-section {
-            margin-bottom: 30px;
+        .abstract {
+            display: none; /* Initially hide all abstracts */
         }
         .publication {
-            margin-bottom: 15px;
-        }
-        .abstract {
-            display: none;
-            margin-top: 5px;
-            font-style: italic;
-            color: #555;
+            margin-bottom: 20px; /* Add gap between publications */
+            margin-left: var(--item-margin-left, 80px); /* Match left margin to education items */
         }
         .links {
-            margin-top: 5px;
+            display: inline-block;
         }
         .links a {
             margin-right: 10px;
-            text-decoration: none;
-            color: #007BFF;
-        }
-        .links a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <div class="background-graphic"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#research">Research</a></li>
+                <li><a href="./education.html">Education</a></li>
+                <li><a href="./publications.html#">Publications</a></li>
+                <li><a href="./experience.html">Experience</a></li>
+                <li><a href="./awards.html">Awards</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
     <h1>Publications</h1>
     <div id="publications-container"></div>
 
@@ -67,15 +71,14 @@
                     const pubDiv = document.createElement('div');
                     pubDiv.className = 'publication';
                     pubDiv.innerHTML = `
-                        <strong>${pub.Title}</strong> <br>
+                        <a href="${pub.PaperLink}" target="_blank"><strong>${pub.Title}</strong></a> <br>
                         <em>${pub.Venue}</em> <br>
                         <span>${pub.Authors}</span> <br>
-                        <a href="#" class="abstract-toggle">Abstract</a>
-                        <div class="abstract">${pub.Abstract}</div>
                         <div class="links">
-                            <a href="${pub.GitHubLink}" target="_blank">GitHub</a>
-                            <a href="${pub.PaperLink}" target="_blank">Paper</a>
+                            <a href="${pub.GitHubLink}" target="_blank">GitHub</a> |
+                            <a href="#" class="abstract-toggle">Abstract</a>
                         </div>
+                        <div class="abstract">${pub.Abstract}</div>
                     `;
                     yearSection.appendChild(pubDiv);
                 });
@@ -86,7 +89,7 @@
             document.querySelectorAll('.abstract-toggle').forEach(toggle => {
                 toggle.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const abstract = this.nextElementSibling;
+                    const abstract = this.parentElement.nextElementSibling;
                     abstract.style.display = abstract.style.display === 'none' || abstract.style.display === '' ? 'block' : 'none';
                 });
             });
@@ -94,5 +97,9 @@
 
         loadPublications();
     </script>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Nirmal Surange. All rights reserved.</p>
+    </footer>
 </body>
 </html>
