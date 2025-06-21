@@ -41,13 +41,13 @@ const samplePublications = [
         year: 2024,
         url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
     },
-    {
-        title: "Semeval task 1: Semantic textual relatedness for african and asian languages",
-        authors: "N. Ousidhoum, S. H. Muhammad, M. Abdalla, et al. (including N. Surange)",
-        venue: "Proceedings of the 18th International Workshop on Semantic Evaluation, SemEval@NAACL",
-        year: 2024,
-        url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
-    },
+    // {
+    //     title: "Semeval task 1: Semantic textual relatedness for african and asian languages",
+    //     authors: "N. Ousidhoum, S. H. Muhammad, M. Abdalla, et al. (including N. Surange)",
+    //     venue: "Proceedings of the 18th International Workshop on Semantic Evaluation, SemEval@NAACL",
+    //     year: 2024,
+    //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+    // },
     // {
     //     title: "Indian language summarization using pretrained sequence-to-sequence models",
     //     authors: "A. Urlana, S. M. Bhatt, N. Surange, and M. Shrivastava",

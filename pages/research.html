@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Topics</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .research-topic {
+            margin-bottom: 20px;
+        }
+        .research-topic h2 {
+            margin-bottom: 10px;
+        }
+        .research-topic p {
+            margin-bottom: 10px;
+        } */
+        .see-more {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-graphic"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#research">Research</a></li>
+                <li><a href="./education.html">Education</a></li>
+                <li><a href="./publications.html#">Publications</a></li>
+                <li><a href="./experience.html">Experience</a></li>
+                <!-- <li><a href="./awards.html">Awards</a></li> -->
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <h1>Research Interests</h1>
+
+    <div class="research-topic" id="graphs-in-nlp"></div>
+        <h3>Graphs in NLP</h3>
+        <p>
+            In NLP, graphs are a general framework for representing the structure and meaning of language by modeling linguistic units as nodes and their syntactic, semantic, or discourse relationships as edges. This representation is especially powerful for capturing non-linear, long-range, and multi-level dependencies that traditional sequential models struggle with.
+        </p>
+        <p>
+            A central category within this framework is the class of text graphs — graph structures directly derived from natural language text. These graphs vary in granularity and purpose, depending on what the nodes and edges represent:
+        </p>
+        <ul style="margin-left: 50px;">
+            <li style="margin-bottom: 10px;"><strong>Co-occurrence graphs:</strong> Nodes are words or terms; edges reflect statistical co-occurrence within a window or document. Used in keyword extraction and unsupervised summarization.</li>
+            <li style="margin-bottom: 10px;"><strong>Dependency and constituency graphs:</strong> Nodes are tokens; edges represent grammatical relations. Widely used in syntactic parsing.</li>
+            <li style="margin-bottom: 10px;"><strong>Semantic graphs (e.g., AMR, PropBank SRL graphs):</strong> Nodes correspond to abstract concepts or predicates; edges capture semantic roles and relations. Useful in semantic parsing, generation, and reasoning.</li>
+            <li style="margin-bottom: 10px;"><strong>Entity and event graphs:</strong> Nodes represent entities or events; edges capture interrelations such as temporal, causal, or co-reference links. Common in information extraction and discourse modeling.</li>
+        </ul>
+        <p>
+            These text graphs are a key instantiation of graphs in NLP, serving as task-adaptive representations that allow for structured learning and reasoning. When combined with graph-based models such as Graph Neural Networks (GNNs), they provide a rich mechanism to incorporate linguistic structure and external knowledge into modern NLP systems.
+        </p>
+    </div>
+
+    <div class="research-topic" id="nlg-evaluation"></div>
+        <h3>Evaluation in Natural Language Generation (NLG)</h3>
+        <p>
+            Evaluation in NLG refers to the process of assessing the quality, correctness, and usefulness of automatically generated text. It can be broadly categorized into:
+        </p>
+        <ul style="margin-left: 50px;">
+            <li style="margin-bottom: 10px;"><strong>Automatic evaluation:</strong> Uses metrics like BLEU, ROUGE, METEOR, BERTScore, or COMET to compare system outputs against reference texts. These are efficient but may poorly capture fluency, coherence, or factual accuracy.</li>
+            <li style="margin-bottom: 10px;"><strong>Human evaluation:</strong> Involves human judgments based on criteria such as fluency, adequacy, relevance, coherence, and factuality. It is more reliable but time-consuming and subjective.</li>
+        </ul>
+        <p>
+            Modern evaluation increasingly focuses on task-specific, context-aware, and reference-free methods to better align with human judgment and real-world utility.
+        </p>
+    </div>
+
+    <div class="research-topic" id="il-nlp"></div>
+        <h3>NLP for Indian Languages</h3>
+        <p>
+            Natural Language Processing (NLP) for Indian languages involves designing computational methods and tools to process, understand, and generate text or speech in the diverse languages spoken across India.
+        </p>
+        <p>
+            This area poses unique challenges and opportunities due to:
+        </p>
+        <ul style="margin-left: 50px;">
+            <li style="margin-bottom: 10px;"><strong>Linguistic diversity:</strong> India has 22 constitutionally recognized languages (and hundreds of dialects), spanning multiple language families (Indo-Aryan, Dravidian, Tibeto-Burman, etc.).</li>
+            <li style="margin-bottom: 10px;"><strong>Script variety:</strong> Different languages use distinct scripts (e.g., Devanagari, Tamil, Bengali, Telugu), and some have rich orthographic features.</li>
+            <li style="margin-bottom: 10px;"><strong>Morphological richness:</strong> Many Indian languages are morphologically complex and agglutinative, making tokenization and parsing more difficult.</li>
+            <li style="margin-bottom: 10px;"><strong>Low-resource status:</strong> Most Indian languages lack large-scale annotated corpora, lexicons, or pretrained models, making supervised NLP challenging.</li>
+            <li style="margin-bottom: 10px;"><strong>Code-mixing and multilingualism:</strong> Frequent mixing of languages (e.g., Hindi-English) in informal contexts adds complexity to tasks like POS tagging, translation, and sentiment analysis.</li>
+        </ul>
+        <p>
+            Despite these challenges, NLP for Indian languages is a growing field driven by the need for inclusive language technologies such as machine translation, speech recognition, information retrieval, sentiment/emotion analysis, and conversational AI tailored to Indian linguistic and cultural contexts.
+        </p>
+        <p>
+            Efforts like AI4Bharat, Bhashini, and IndicNLP are helping build foundational resources, tools, and models to bridge the gap and democratize access to NLP across Indian languages.
+        </p>
+    </div>
+
+    <script>
+        function showMore(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Nirmal Surange. All rights reserved.</p>
+    </footer>
+    <script>
+        // Update the current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

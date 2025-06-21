@@ -183,7 +183,7 @@ p {
 }
 
 /* Education and Experience */
-.education-item, .experience-item, .award-item {
+.education-item, .experience-item, .award-item, .research-topic {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--light-gray);
