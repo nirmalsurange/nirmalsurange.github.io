@@ -21,12 +21,19 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
 // Publications data from Nirmal Surange's publications PDF
 const samplePublications = [
     {
-        title: "Teclass: A human-annotated relevance-based headline classification and generation dataset for telugu",
-        authors: "G. Kanumolu, L. Madasu, N. Surange, and M. Shrivastava",
-        venue: "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation, LREC/COLING",
-        year: 2024,
-        url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+        title: "BRIGHTER: Bridging the gap in human-annotated textual emotion recognition datasets for 28 languages",
+        authors: "Shamsuddeen Hassan Muhammad et.al.",
+        venue: "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+        year: 2025,
+        url: "https://aclanthology.org/2025.acl-long.436.pdf"
     },
+    // {
+    //     title: "Teclass: A human-annotated relevance-based headline classification and generation dataset for telugu",
+    //     authors: "G. Kanumolu, L. Madasu, N. Surange, and M. Shrivastava",
+    //     venue: "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation, LREC/COLING",
+    //     year: 2024,
+    //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+    // },
     {
         title: "Mukhyansh: A headline generation dataset for indic languages",
         authors: "L. Madasu, G. Kanumolu, N. Surange, and M. Shrivastava",
@@ -55,13 +62,13 @@ const samplePublications = [
     //     year: 2022,
     //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
     // },
-    // {
-    //     title: "Tesum: Human-generated abstractive summarization corpus for telugu",
-    //     authors: "A. Urlana, N. Surange, P. Baswani, P. Ravva, and M. Shrivastava",
-    //     venue: "Proceedings of the Thirteenth Language Resources and Evaluation Conference, LREC 2022",
-    //     year: 2022,
-    //     url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
-    // },
+    {
+        title: "Tesum: Human-generated abstractive summarization corpus for telugu",
+        authors: "A. Urlana, N. Surange, P. Baswani, P. Ravva, and M. Shrivastava",
+        venue: "Proceedings of the Thirteenth Language Resources and Evaluation Conference, LREC 2022",
+        year: 2022,
+        url: "https://scholar.google.com/citations?user=CaOYynIAAAAJ&hl=en"
+    },
     // {
     //     title: "LTRC @mup 2022: Multi-perspective scientific document summarization using pre-trained generation models",
     //     authors: "A. Urlana, N. Surange, and M. Shrivastava",
