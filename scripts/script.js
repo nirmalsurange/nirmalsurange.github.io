@@ -22,7 +22,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
 const samplePublications = [
     {
         title: "BRIGHTER: Bridging the gap in human-annotated textual emotion recognition datasets for 28 languages",
-        authors: "Shamsuddeen Hassan Muhammad et.al.",
+        authors: "S.H. Muhammad et.al.",
         venue: "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
         year: 2025,
         url: "https://aclanthology.org/2025.acl-long.436.pdf"
